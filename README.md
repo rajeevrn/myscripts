@@ -1,2 +1,2 @@
-# vtscripts
-Repo of a scripts that I work on
+# myscripts (virtualtraces.com)
+A repo for scripts #!
