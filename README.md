@@ -1,2 +1,2 @@
 # myscripts (virtualtraces.com)
-A repo for scripts #!
+This repo is for scripts #!
