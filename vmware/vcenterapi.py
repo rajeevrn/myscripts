@@ -8,7 +8,7 @@ import urllib3
 #  Wanted to disable the warnings. Only for demo, do not disable the warnings. 
 urllib3.disable_warnings()
 
-#URL of the appliance 
+#URL of the VCSA Appliance 
 url = "https://192.168.0.9/rest/appliance/"
 #API which you want to explore 
 restdata = "/health/applmgmt";
@@ -21,7 +21,7 @@ mypar = json.loads(hdata)
 myvalue = mypar['value']
 
 #Checking the value
-print "The current status health status of the appliance is:", myvalue.upper()
+print "The Health status of the appliance is:", myvalue.upper()
 if myvalue == "green":
     print "VCSA health status is fine"        
 elif myvalue == "yellow":
