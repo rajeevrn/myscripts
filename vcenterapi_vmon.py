@@ -19,22 +19,22 @@ import requests
         mycookie: cookie that is generated    
 ''' 
 
-def session():   
-    urllib3.disable_warnings()
-    url="https://192.168.0.7/rest/com/vmware/cis/session"
-    global mysession 
-    mysession = requests.Session()
-    #Server validating 
-    serverresp = mysession.post(url,auth=('Administrator@vsphere.local','password'),verify=False)
-    mycookie = serverresp.text.split(":")[1]
-    #Check if the post action was successful
- 
-    if(serverresp.status_code == 200):
-         print "Connection to the vcenter succeeded"        
-    else:
-        print "Unable to connect with vcenter"
-    return 
-session()
+# def session():   
+#     urllib3.disable_warnings()
+#     url="https://192.168.0.7/rest/com/vmware/cis/session"
+#     global mysession 
+#     mysession = requests.Session()
+#     #Server validating 
+#     serverresp = mysession.post(url,auth=('Administrator@vsphere.local','password'),verify=False)
+#     mycookie = serverresp.text.split(":")[1]
+#     #Check if the post action was successful
+#  
+#     if(serverresp.status_code == 200):
+#          print "Connection to the vcenter succeeded"        
+#     else:
+#         print "Unable to connect with vcenter"
+#     return 
+# session()
 
 '''
     Start an vcenter service using REST API(vmon)    
@@ -52,7 +52,9 @@ session()
 '''
 
 def vcenteraction(vurl,vservice,action):
-    url2 = vurl + vservice  + '/' +action
+    
+#     url2 = vurl + vservice  + '/' +action
+    
     print "Service update for the url: " +url2
     service_post = mysession.post(url2, auth=('Administrator@vsphere.local','password'),verify=False)
     print service_post.status_code 
