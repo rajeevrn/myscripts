@@ -10,7 +10,8 @@ import boto3
 session = boto3.Session()
 s3_resource = boto3.resource('s3')
 
-for buckets in s3_resource.buckets.all():    
+for buckets in s3_resource.buckets.all():
     buckets.objects.all().delete()
+    print ("Bucket to be deleted: " + buckets.name)
     buckets.delete()
-    print "All Buckets are deleted"
+print "All Buckets are deleted"
