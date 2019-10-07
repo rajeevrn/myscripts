@@ -1,2 +1,2 @@
 # myscripts (thecloudops.com)
-This repo is for scripts #!
+This repo is for scripts #
